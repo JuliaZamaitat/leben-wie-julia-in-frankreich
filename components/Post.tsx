@@ -30,6 +30,17 @@ const Post = (props: any) => {
       </div>
 
       <article className="prose mx-auto my-0 py-10">
+        <style>
+          {`
+      .prose img {
+        max-width: 100%;
+        max-height: 90vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    `}
+        </style>
         <Markdown>{post.content}</Markdown>
       </article>
     </div>
