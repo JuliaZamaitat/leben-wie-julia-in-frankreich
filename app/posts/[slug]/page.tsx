@@ -1,6 +1,7 @@
 import fs from 'fs';
 import Markdown from 'markdown-to-jsx';
 import matter from 'gray-matter';
+import Post from '../../../components/Post';
 // import getPostMetadata from '../../../components/getPostMetadata';
 
 const getPostContent = (slug: string) => {
@@ -21,14 +22,27 @@ const getPostContent = (slug: string) => {
 const PostPage = (props: any) => {
   const slug = props.params.slug;
   const post = getPostContent(slug);
+  console.log(post);
   return (
     <div>
-      <div className="text-center">
-        <h1 className="text-2xl text-rose-600 ">{post.data.title}</h1>
-        <p className="text-slate-400 mt-2">{post.data.date}</p>
+      <div className="my-12 text-center">
+        <h1 className="text-4xl text-rose-500">{post.data.title}</h1>
+        <h2 className="text-xl text-gray-400 pt-1">{post.data.subtitle}</h2>
+        <p className="text-rose-400">{post.data.date}</p>
       </div>
 
-      <article className="prose">
+      <article className="prose mx-auto my-0 py-10">
+        <style>
+          {`
+      .prose img {
+        max-width: 100%;
+        max-height: 90vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    `}
+        </style>
         <Markdown>{post.content}</Markdown>
       </article>
     </div>

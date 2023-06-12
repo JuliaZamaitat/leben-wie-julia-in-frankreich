@@ -1,6 +1,7 @@
 import getPostMetadata from '../components/getPostMetadata';
 import PostList from '../components/PostList';
 import moment from 'moment';
+import PostPreview from '../components/PostPreview';
 
 const HomePage = () => {
   // const postMetadata = getPostMetadata().reverse();
@@ -13,13 +14,24 @@ const HomePage = () => {
     return dateB.diff(dateA);
   });
 
-  console.log(postMetadata);
-
-  const posts = postMetadata.map((post) => (
-    <PostList key={post.slug} {...post} />
+  const postPreviews = postMetadata.map((post) => (
+    <PostPreview key={post.slug} {...post} />
   ));
 
-  return <div>{posts}</div>;
+  // console.log(postMetadata);
+
+  // const posts = postMetadata.map((post) => (
+  //   <PostList key={post.slug} {...post} />
+  // ));
+
+  // return <div>{posts}</div>;
+  return (
+    <div className="flex justify-center items-center">
+      <div className="flex flex-col justify-center items-left">
+        {postPreviews}
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;

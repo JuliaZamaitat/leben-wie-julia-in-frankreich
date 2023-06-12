@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   const header = (
     <header>
-      <div className="text-center p-8 my-6 ">
+      <div className="text-center p-8 my-6">
         <Image
           src="/flag.png"
           width={40}
@@ -28,23 +28,18 @@ export default function RootLayout({
   );
 
   const footer = (
-    <footer>
-      <div className="border-t border-slate-400 mt-12 py-6 text-center text-slate-400">
+    <footer className="mt-auto">
+      <div className="border-t border-slate-400 py-6 text-center text-slate-400">
         <h3>Leben wie Julia in Frankreich</h3>
       </div>
     </footer>
   );
 
   return (
-    <html>
-      <head />
-      <body>
-        <div className="mx-auto px-6">
-          {header}
-          {children}
-          {footer}
-        </div>
-      </body>
-    </html>
+    <div className="flex flex-col min-h-screen">
+      {header}
+      <div className="flex-grow mx-auto px-6">{children}</div>
+      {footer}
+    </div>
   );
 }
