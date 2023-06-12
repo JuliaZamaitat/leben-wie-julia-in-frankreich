@@ -1,5 +1,5 @@
 import getPostMetadata from '../components/getPostMetadata';
-import PostList from '../components/PostList';
+// import PostList from '../components/PostList';
 import moment from 'moment';
 import PostPreview from '../components/PostPreview';
 
