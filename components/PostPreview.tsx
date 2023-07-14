@@ -4,7 +4,7 @@ import { PostMetadata } from './PostMetadata';
 
 const PostPreview = (props: PostMetadata) => {
   return (
-    <div className="max-w-2xl p-4">
+    <div className="max-w-[80%] p-4">
       <div className="">
         <Link href={`/posts/${props.slug}`}>
           <Image
